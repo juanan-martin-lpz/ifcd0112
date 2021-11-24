@@ -1,0 +1,8 @@
+<phpunit>
+  <testsuites>
+    <testsuite name="Trabajos">
+      <file>tests/DatabaseProceduresTests.php</file>
+      <file>tests/TrabajoDBTests.php</file>
+    </testsuite>
+  </testsuites>
+</phpunit>

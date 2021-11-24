@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documento</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="html/css/estilos.css" type="text/css" media="screen" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Quicksand:wght@300&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="../css/estilos.css" type="text/css" media="screen" />
+
+    </head>
+
+    <body>
+        <div class="header flex">
+            <div>
+                <h1>Mis Trabajos</h1>
+                <a class="hover" href="/">Inicio</a>
+            </div>
+        </div>
+        <main class="grid griddatos">
+            <div class="formulario">
+                <form class="form" method="POST" action="trabajos.php">
+                    <div class="campo">
+                        <label for="anno" id="anno">Especialidad</label>
+                        <input type="text" id="anno" name="anno" placeholder="Año" required/>
+                    </div>
+                    <div class="campo">
+                        <label for="especialidad">Año</label>
+                        <select id="especialidad" name="especialidad">
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="empresa" id="empresa" required>Empresa</label>
+                            <input type="text" id="empresa" name="empresa" placeholder="Empresa" required/>
+                    </div>
+                    <div class="campo">
+                        <label for="tareas" id="tareas">Tareas</label>
+                        <input type="text" id="tareas" name="tareas" placeholder="Tareas" required/>
+                    </div>
+                    <div class="campo">
+                        <label for="meritos" id="meritos">Meritos</label>
+                        <input type="text" id="meritos" name="meritos" placeholder="Meritos" required/>
+                    </div>
+                    <button type="submit" class="boton-editar">Guardar</button>
+                    <button type="reset" class="boton-borrar">Cancelar</button>
+                </form>
+            </div>
+
+
+            <div class="contenido">
+                <!-- Filtro -->
+                <div>
+                    <form class="form" action="trabajos.php" method="GET">
+                        <label for="filtro">Filtrar por Especialidad</label>
+                        <select id="filtro" name="filtro">
+                            <option value="0">Ninguna seleccionada</option>
+                        </select>
+                        <input class="btn" type="submit" value="Filtrar">
+                    </form>
+                </div>
+                <!-- Grid -->
+                <div class="tabla">
+                    <table id="tabla" class="gridtabla">
+                        <thead>
+                            <caption>Trabajos</caption>
+                            <tr class="grid-header">
+                                <th>
+                                    Id.
+                                </th>
+                                <th>
+                                    Año
+                                </th>
+                                <th>
+                                    Especialidad
+                                </th>
+                                <th>
+                                    Empresa
+                                </th>
+                                <th>
+                                    Tareas
+                                </th>
+                                <th>
+                                    Meritos
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablabody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </main>
+    </body>
+</html>
