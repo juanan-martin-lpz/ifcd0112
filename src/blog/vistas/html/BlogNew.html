@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Portfolio</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Quicksand:wght@300&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/css/estilos.css" type="text/css" media="screen" />
+        <script src="https://kit.fontawesome.com/ee861ae5d9.js" crossorigin="anonymous"></script>
+
+    </head>
+
+    <body>
+        <div class="header flex">
+           <div>
+               <h1>Blog</h1>
+               <div class="inline">
+                   <a class="hover" href="/blog">Atras</a>
+               </div>
+           </div>
+        </div>
+
+        <main>
+            <div class="sized">
+
+                <form class="form" action="/blog/new" method="POST" enctype="multipart/form-data">
+                    <fieldset>
+                        <legend>Nueva Entrada de Blog</legend>
+                        <div class="campo">
+                            <label for="titulo">Titulo</label>
+                            <input type="text" id="titulo" name="titulo" required>
+                        </div>
+                        <div class="campo">
+                            <label for="contenido">Contenido</label>
+                            <textarea id="contenido" name="contenido" rows="25" cols="145" required ></textarea>
+                        </div>
+                        <div class="campo">
+                            <label for="imagen">Imagen</label>
+                            <input id="imagen" type="file" name="imagen" class="text" required />
+                        </div>
+                        <button class="btn" type="submit" id="submitbtn">Guardar</button>
+                        <a class="boton-cancelar" id="cancelbtn" href="/blog">Cancelar</a>
+                    </fieldset>
+                </form>
+                <div id="errores" class="errors">
+                </div>
+            </div>
+        </main>
+    </body>
+
+</html>

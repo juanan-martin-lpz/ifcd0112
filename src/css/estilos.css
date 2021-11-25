@@ -14,6 +14,7 @@ img {
 
 body {
     font-family: 'Quicksand', sans-serif;
+    margin: 0;
 }
 
 ul {
@@ -62,6 +63,7 @@ a {
     min-height: 90rem;
     height: 90%;
 
+    opacity: 0.8;
     background-image: url('../img/background-main.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -173,6 +175,7 @@ a {
     color: #CED4DA;
     margin: 0 0 0 0;
     margin-right: 10rem;
+    text-align: right;
 }
 
 .header a {
@@ -214,13 +217,13 @@ a {
 }
 
 .formulario {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    margin: 0 auto;
-    width: 50rem;
-    height: 20rem;
-    margin-left: 10rem;
-    padding-top: 5rem;
+    padding-top: 60px;
+    padding-left: 5rem;
+    width: 600px;
+}
+
+form fieldset {
+    border: 1px groove #ADB5BD;
 }
 
 .form input {
@@ -245,6 +248,70 @@ a {
 
 .campo input {
     flex: 1;
+    border: 1px solid #ADB5BD;
+    border-radius: 3px;
+}
+
+/** Botones */
+
+input[type="file"] {
+        background-color: #6C757D;
+        border:1px solid #495057;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-size:1.6rem;
+        font-weight:bold;
+        padding:6px 24px;
+        text-decoration:none;
+}
+
+.btn {
+        box-shadow:inset 0px 1px 0px 0px #9acc85;
+        background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+        background-color:#74ad5a;
+        border:1px solid #3b6e22;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-size:1.6rem;
+        font-weight:bold;
+        padding:6px 24px;
+        text-decoration:none;
+}
+
+.btn:hover {
+        background:linear-gradient(to bottom, #68a54b 5%, #74ad5a 100%);
+        background-color:#68a54b;
+}
+
+.btn:active {
+        position:relative;
+        top:1px;
+}
+
+.boton-cancelar {
+
+    box-shadow:inset 0px 1px 0px 0px #cf866c;
+    background:linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+    background-color:#d0451b;
+    border:1px solid #942911;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-size:1.6rem;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    margin-left: 1rem;
+}
+.boton-cancelar:hover {
+        background:linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
+        background-color:#bc3315;
+}
+.boton-cancelar:active {
+        position:relative;
+        top:1px;
 }
 
 /** Cabeceras de grid */
@@ -343,3 +410,120 @@ td:last-of-type {
 
 
 /** Blog */
+
+.inline {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.grey {
+    background-color: #495057;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    cursor: pointer;
+    padding: 1rem 1rem;
+}
+
+.blog-grid a {
+    /* padding: 1rem 0.2rem; */
+    max-height: 70rem;
+    height: 40rem;
+}
+.card {
+    border: 1px solid #CED4DA;
+    border-radius: 5px;
+
+    max-width: 40rem;
+    max-height: 40rem;
+    height: 40rem;
+}
+
+
+.card h3 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #CED4DA;
+    text-align: center;
+}
+
+.card p {
+    font-size: 1.6rem;
+    color: #CED4DA;
+    margin: 3rem 2rem;
+}
+
+.thumbnail {
+    max-height: 180px;
+    height: 180px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Blog Entry */
+
+.entrymain {
+    height: 70rem;
+    min-height: 70rem;
+}
+
+.sized {
+    margin: 0 auto;
+    padding-top: 5rem;
+    width: 1200px;
+}
+
+.entrymain .picture {
+    margin: 0 auto;
+    max-height: 300px;
+    height: 300px;
+
+    max-width: 500px;
+    width: 500px;
+
+}
+
+.entrymain img {
+    width: 100%;
+    height: 100%;
+}
+
+.entrymain h1 {
+    padding-top: 3rem;
+    font-size: 2.6rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.entrymain p {
+    font-size: 1.6rem;
+}
+
+/* Blog New */
+
+textarea {
+    resize: none;
+    margin-bottom: 3rem;
+    border: 1px solid #ADB5BD;
+    border-radius: 3px;
+
+}
+
+.errors {
+    margin-top: 2rem;
+    border-radius: 3px;
+    color: red;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.errors h3: {
+    padding-left: 5rem;;
+}

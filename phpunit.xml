@@ -3,6 +3,7 @@
     <testsuite name="Trabajos">
       <file>tests/DatabaseProceduresTests.php</file>
       <file>tests/TrabajoDBTests.php</file>
+      <file>tests/BlogEntriesListControllerTest.php</file>
     </testsuite>
   </testsuites>
 </phpunit>
