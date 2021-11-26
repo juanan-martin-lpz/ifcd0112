@@ -1,0 +1,12 @@
+// Selenium -------------------------------------------------------
+  Scenario: Volver a la pagina principal desde el blog
+    Given Estoy en la url /blog
+    When Hago click en el elemento etiquetado como Atras
+    Then Me lleva a la pagina principal del sitio
+
+  Scenario: Acceder al formulario de creacion de entradas
+    Given Estoy en la url /blog
+    When Hago click en el elemento etiquetado como Nuevo
+    Then Me redirige a la url /blog/new
+    And Obtengo una cadena html con con form dentro
+//-----------------------------------------------------------------

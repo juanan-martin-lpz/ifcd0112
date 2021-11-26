@@ -28,7 +28,7 @@ class DAOBlogEntry extends Database
 
     function __construct()
     {
-        $this->dbconfig = new DBConfig(dirname(__FILE__) . '/config.json');
+        $this->dbconfig = new DBConfig(dirname(__FILE__) . '/../../config/config.json');
         $this->db = new Database($this->dbconfig);
     }
 

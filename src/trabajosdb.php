@@ -22,7 +22,7 @@
 function seleccionarTrabajos($sql, $params) {
 
     // Configuramos el acceso a datos
-    $config = new DBConfig( dirname(__FILE__) . '/config.json');
+    $config = new DBConfig( dirname(__FILE__) . '/config/config.json');
 
     $conexion = connect($config);
 
@@ -49,7 +49,7 @@ function seleccionarTrabajos($sql, $params) {
 function seleccionarEspecialidades() {
 
     // Configuramos el acceso a datos
-    $config = new DBConfig( dirname(__FILE__) . '/config.json');
+    $config = new DBConfig( dirname(__FILE__) . '/config/config.json');
 
     $conexion = connect($config);
 
@@ -78,7 +78,7 @@ function seleccionarEspecialidades() {
 function insertarTrabajo($anno, $especialidad, $empresa, $tareas, $meritos) {
 
     // Configuramos el acceso a datos
-    $config = new DBConfig( dirname(__FILE__) . '/config.json');
+    $config = new DBConfig( dirname(__FILE__) . '/config/config.json');
 
     $conexion = connect($config);
 

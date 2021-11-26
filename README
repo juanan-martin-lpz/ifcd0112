@@ -1,0 +1,51 @@
+PROYECTO FIN CURSO IFCD0112
+
+JUAN MARTIN LOPEZ
+
+INSTALACION WINDOWS
+
+Si se usa XAMPP o similares, descomprimir en una carpeta del equipo y copiar el contenido de la carpeta src a la carpeta raiz del servidor (generalmente llamada httpdocs, dentro de la instalacion del servidor).
+
+Editar el fichero /config/config.json y colocar las credenciales en los campos user y password. Por defecto estos valores son "root" y "" (en blanco).
+
+INSTALACION LINUX
+
+Descomprimir en una carpeta del equipo y copiar el contenido de la carpeta a una carpeta en el servidor (con Apache generalmente en /var/www/htdocs) y editar el fichero /config/config.json para colocar
+las credenciales de acceso a su base de datos. Por defecto el campo user es igual a "root" y el password esta en blanco.
+
+ACCEDER
+
+Si el servidor es local, acceda a traves de su navegador a la direccion http://localhost/<carpeta> donde carpeta es la carpeta donde haya copiado la aplicacion.
+Si el servidor es remoto, acceda a la direccion IP o nombre de dominio de su servidor y use el path elegido durante la subida de los archivos.
+
+TESTS
+
+Para la realizacion de los tests, necesitara tener el ejecutable php al alcance de su usuario y el binario de composer (https://getcomposer.org/doc/00-intro.md), esto es, en el path.
+
+En una consola, acceda a la carpeta donde descomprimio los archivos (si no lo ha hecho hagalo antes) y dentro de la carpeta raiz ejecute
+
+   composer install
+
+Esto instalara las dependencias del proyecto.
+
+A continuacion puede realizar los test con:
+
+  composer tests
+
+  composer behat
+
+Hay dos tipos de test:
+
+La parte procedural se testea con phpunit mientras que la parte MVC se testea con behat. Para los test de behat, la aplicacion debe estar ejecutandose en el servidor.
+
+Es posible que los test behat le fallen la primera vez. Eso es debido a que por defecto tratan de acceder a la aplicacion en http://localhost:3210. Para cambiarlo
+edite el fichero features/FeatureContext.php y localice el siguiente codigo (estara al principio):
+
+    public function __construct()
+    {
+        $this->client = new \GuzzleHttp\Client(['base_uri' => 'http://localhost:3210/']);
+    }
+
+Cambie el valor de base_uri para que apunte a su servidor.
+
+Los test NO son exhaustivos, pero sirven para comprobar que la aplicacion funcionara.
