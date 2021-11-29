@@ -8,10 +8,18 @@ Si se usa XAMPP o similares, descomprimir en una carpeta del equipo y copiar el 
 
 Editar el fichero /config/config.json y colocar las credenciales en los campos user y password. Por defecto estos valores son "root" y "" (en blanco).
 
+Importar la base de datos bien desde phpmyadmin o bien desde la linea de comandos con mysql.
+
+El fichero donde reside la estrucutura de la tabla y los datos de ejemplo es /tabla.sql.
+
 INSTALACION LINUX
 
 Descomprimir en una carpeta del equipo y copiar el contenido de la carpeta a una carpeta en el servidor (con Apache generalmente en /var/www/htdocs) y editar el fichero /config/config.json para colocar
 las credenciales de acceso a su base de datos. Por defecto el campo user es igual a "root" y el password esta en blanco.
+
+Importar la base de datos bien desde phpmyadmin o bien desde la linea de comandos con mysql.
+
+El fichero donde reside la estrucutura de la tabla y los datos de ejemplo es /tabla.sql.
 
 ACCEDER
 
@@ -46,6 +54,6 @@ edite el fichero features/FeatureContext.php y localice el siguiente codigo (est
         $this->client = new \GuzzleHttp\Client(['base_uri' => 'http://localhost:3210/']);
     }
 
-Cambie el valor de base_uri para que apunte a su servidor.
+Cambie el valor de base_uri para que apunte a su servidor, incluyendo la carpeta donde instalo la aplicacion.
 
-Los test NO son exhaustivos, pero sirven para comprobar que la aplicacion funcionara.
+Los test NO son exhaustivos, pero sirven para comprobar que la aplicacion funcionara de forma correcta.

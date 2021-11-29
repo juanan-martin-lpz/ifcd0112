@@ -60,13 +60,16 @@ a {
     flex-direction: column;
     align-items: end;
 
-    min-height: 90rem;
-    height: 90%;
+    min-height: 100vh;
+    height: 100vh;
 
     opacity: 0.8;
     background-image: url('../img/background-main.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: bottom right;
+
+    position: relative;
 }
 
 .nombre {
@@ -85,7 +88,7 @@ a {
 .nombre h1 {
     font-size: 7rem;
     font-weight: 300;
-    color: #212529;
+    color: #CED4DA;
 }
 
 .segunda-linea h2 {
@@ -99,59 +102,79 @@ a {
 
 .degradado-blanco {
     color: transparent;
-    background: linear-gradient(to right, #CED4DA 0%, #212529 85% );
+    background: linear-gradient(to right, #6C757D 40%, #CED4DA  80% );
     -webkit-background-clip: text;
     background-clip: text;
 }
 
 .menubar {
-    padding-top: 2.0rem;
+    padding-top: 5.0rem;
 }
 
 
 .menubar li {
     font-size: 4rem;
     font-weight: 400;
-    padding-top: 1rem;
-    color: #000;
-
+    /*padding-top: 1.5rem;*/
     text-align: right;
-
-    transition: transform 0.3s;
+    transition: transform 0.3s, background-color 0.6s;
+    padding: 1rem;
+    /* Resaltar el menu
+    border-radius: 10px;
+    */
 }
 
 .menubar li:hover {
     transform: scale(1.2);
+    /* Resaltar el menu
+    background-color: #495057 ;
+    opacity: 0.65;
+    */
+}
+
+li a {
+    color: #CED4DA;
 }
 
 .otros {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10rem;
+    align-items: flex-end;
+
+    position: absolute;
+    top: 75%;
+
+    padding: 2rem;
+
+    border-radius: 10px;;
+
+    -webkit-transition: background-color 0.6s;
+    background-color: transparent ;
+    opacity: 1;
+
+    transition: background-color 0.6s;
 }
 
-.inverso {
-    display: block;
-    margin-left: 35rem;
+.otros h3 {
+    color: #212529;
+    font-size: 3rem;
+    margin: 1.5rem;
 }
 
-.inverso a {
-    font-size: 2rem;
-    color: #CED4DA;
-
+.otros div {
+    margin-bottom: 1rem;
+}
+.otros div a {
+    color: #000;
+    font-size: 2.0rem;
 }
 
-.inverso a:hover {
-    border-bottom: 2px solid #CED4DA;
+.otros:hover {
+    background-color: #CED4DA ;
+    opacity: 0.65;
 }
 
-.inverso h3 {
-    font-size: 2rem;
-    color: #CED4DA;
-
-}
-
-.inverso div {
-    padding-bottom: 2rem;
-}
 /** trabajos.html **/
 
 .header {
@@ -434,6 +457,60 @@ td:last-of-type {
     max-height: 70rem;
     height: 40rem;
 }
+
+.blog-contenedor {
+    position: relative;
+    overflow: hidden;
+    /* height: 500px; */
+    border: 1px solid black;
+    border-radius: 5px;
+    /* margin: 5px; */
+    padding: 0px 10px;
+    /* background-color: grey; */
+    /* color: #CED4DA; */
+}
+
+.persiana {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background-color: #6C757D;
+
+    transition: top 0.8s;
+    height: 100%;
+    color: #CED4DA;
+    background-size: cover;
+    border-radius: 2px;
+
+    font-weight: 700;
+}
+
+.persiana2 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background-color: #343A40;
+
+    transition: top 0.6s;
+    height: 100%;
+    padding: 10px;
+    color: #CED4DA;
+    background-size: cover;
+    border-radius: 2px;
+}
+
+.blog-contenedor:hover  .persiana {
+    top: 40%;
+    height: 100%;
+}
+
+.blog-contenedor:hover  .persiana2 {
+    top: 60%;
+    height: 100%;
+}
+
 .card {
     border: 1px solid #CED4DA;
     border-radius: 5px;
@@ -470,8 +547,8 @@ td:last-of-type {
 /* Blog Entry */
 
 .entrymain {
-    height: 70rem;
-    min-height: 70rem;
+    height: 83vh;
+    min-height: 83vh;
 }
 
 .sized {
@@ -496,15 +573,28 @@ td:last-of-type {
 }
 
 .entrymain h1 {
+    color: #ADB5BD;
     padding-top: 3rem;
-    font-size: 2.6rem;
+    font-size: 4rem;
     font-weight: 700;
     text-align: center;
 }
 
 .entrymain p {
-    font-size: 1.6rem;
+    color: #ADB5BD;
+    font-size: 1.8rem;
+
 }
+
+.entrymain p::first-letter {
+    font-family: 'Monserrat';
+    float: left;
+    font-size: 9rem;
+    font-weight: 900;
+    /* line-height: 7rem; */
+    padding-right: 0.5rem;
+}
+
 
 /* Blog New */
 

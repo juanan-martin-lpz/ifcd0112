@@ -71,7 +71,7 @@ class DAOBlogEntry extends Database
 
     public function findAll()
     {
-        $sql = "SELECT * FROM BLOG ORDER BY fecha DESC";
+        $sql = "SELECT * FROM BLOG ORDER BY fecha DESC, idblog DESC";
 
         $dataset = $this->db->query($sql);
         $result = [];
