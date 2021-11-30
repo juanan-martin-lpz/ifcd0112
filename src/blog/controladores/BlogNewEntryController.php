@@ -152,7 +152,7 @@ class BlogNewEntryController implements IController
         $filename = $filehash . "." . $extension;
 
         // Si no existe la imagen la movemos a la carpeta
-        if (!file_exists("/imagenes/" . $filename)) {
+        if (!file_exists("../imagenes/" . $filename)) {
             move_uploaded_file($_FILES['imagen']['tmp_name'], dirname(__FILE__) . "/../../imagenes/" . $filename);
         }
 
@@ -165,7 +165,7 @@ class BlogNewEntryController implements IController
 
         try {
             $this->dao->create($entry);
-            header("Location: /blog");
+            header("Location: ../blog");
         }
         catch (Exception $ex) {
             // Mostramos errores

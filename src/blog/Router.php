@@ -23,6 +23,7 @@ class Router
     private $list;
     private $entry;
     private $newentry;
+    private $base_site;
 
     /**
      * Construye la clase
@@ -35,18 +36,26 @@ class Router
 
 	function __construct()
 	{
+        // Obtenemos el nombre base del sitio
+        // No hay casi forma de hacerlo, salvo el dirname de la localizacion del index/Router.php
+        // Incluye la carpeta "blog" por lo que no hay que incluirla en las rutas
+        $this->base_site = dirname($_SERVER['PHP_SELF']);
+
+        $_SERVER['BASE_SITE'] = $this->base_site;
+
         // Creamos los controladores
         $this->list = new BlogEntriesListController();
         $this->entry = new BlogEntryController();
         $this->newentry = new BlogNewEntryController();
 
+
+        // Por lo que a este modulo respecta, / es el sitio principal
         // Creamos las rutas de la aplicacion
-        $this->routes['/blog'] = $this->list;
-        $this->routes['/blog/view'] = $this->entry;
-        $this->routes['/blog/new'] = $this->newentry;
+        $this->routes['/'] = $this->list;
+        $this->routes['/view'] = $this->entry;
+        $this->routes['/new'] = $this->newentry;
 
 	}
-
 
     /**
      * Enruta al controlador necesario a partir de la URL
@@ -75,24 +84,29 @@ class Router
         // La ruta que se incluira en la request sera de / para el match
         // y el resto de la ruta para el parcial
 
+        
         $controller = null;
 
-        // Si existe una ruta completa....
-        $controller = @$this->routes[$request['url']];
+        $internal_url = substr($request['url'], strlen($this->base_site));
 
+        // Si existe una ruta completa....
+        $controller = @$this->routes[$internal_url];
+
+        echo $request['url'];
+        
         // Ruta parcial
         if (!$controller) {
 
             // Recorremos las rutas y miramos a ver si hay alguna que nos sirva
             foreach($this->routes as $route => $control) {
 
-                if (str_starts_with($request['url'], $route)) {
+                if (str_starts_with($internal_url, $route)) {
                     // Match, habemus controlador
                     $controller = $control;
                     // La ruta esta al inicio, el resto es parametros
                     // Los separamos con split
                     $base = explode('/', $route);
-                    $requested = explode('/',$request['url']);
+                    $requested = explode('/',$internal_url);
 
                     $paramarray = [];
 

@@ -52,7 +52,7 @@ class BlogEntryView
 
         $titulo->textContent = $entry->gettitulo();
         $contenido->textContent = $entry->getcontenido();
-        $imagen->setAttribute("src", "/imagenes/" . $entry->getimagen());
+        $imagen->setAttribute("src", "../../imagenes/" . $entry->getimagen());
 
         return $this->dom->saveHTML();
     }

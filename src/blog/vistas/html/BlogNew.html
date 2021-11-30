@@ -11,8 +11,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Quicksand:wght@300&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="css/modernizr.css" type="text/css" media="screen" />
-        <link rel="stylesheet" href="/css/estilos.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="../css/modernizr.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="../css/estilos.css" type="text/css" media="screen" />
         <script src="https://kit.fontawesome.com/ee861ae5d9.js" crossorigin="anonymous"></script>
 
     </head>
@@ -22,7 +22,7 @@
            <div>
                <h1>Blog</h1>
                <div class="inline">
-                   <a class="hover" href="/blog">Atras</a>
+                   <a class="hover" href="../blog">Atras</a>
                </div>
            </div>
         </div>
@@ -30,7 +30,7 @@
         <main>
             <div class="sized">
 
-                <form class="form" action="/blog/new" method="POST" enctype="multipart/form-data">
+                <form class="form" action="new" method="POST" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Nueva Entrada de Blog</legend>
                         <div class="campo">
@@ -46,7 +46,7 @@
                             <input id="imagen" type="file" name="imagen" class="text" required />
                         </div>
                         <button class="btn" type="submit" id="submitbtn">Guardar</button>
-                        <a class="boton-cancelar" id="cancelbtn" href="/blog">Cancelar</a>
+                        <a class="boton-cancelar" id="cancelbtn" href="../blog">Cancelar</a>
                     </fieldset>
                 </form>
                 <div id="errores" class="errors">

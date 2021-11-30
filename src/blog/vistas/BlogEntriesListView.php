@@ -97,7 +97,7 @@ class BlogEntriesListView
             // Creamos una tag div. Se le añade una class="card"
             $div = $this->dom->createElement("article");
             $div->setAttribute("class", "card blog-contenedor");
-            $div->setAttribute("style", "background-image: url('/imagenes/" . $entry->getimagen() .  "'); background-cover: cover; background-repeat: no-repeat; background-position: center center");
+            $div->setAttribute("style", "background-image: url('../imagenes/" . $entry->getimagen() .  "'); background-cover: cover; background-repeat: no-repeat; background-position: center center");
 
             //$div->appendChild($img);
             $div->appendChild($h3);
@@ -107,7 +107,10 @@ class BlogEntriesListView
 
             // Creamos una tag a. El href es /blog/view/<id>
             $a = $this->dom->createElement("a");
-            $a->setAttribute("href", "/blog/view/" . $entry->getid());
+            
+            // /<nombre>/blog/view/1
+
+            $a->setAttribute("href", "view/" . $entry->getid());
 
             $a->appendChild($div);
 

@@ -1,0 +1,4 @@
+Options -MultiViews
+RewriteEngine On
+
+RewriteRule "^/new$" "new"
