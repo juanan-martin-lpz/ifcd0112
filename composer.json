@@ -8,9 +8,9 @@
     ],
   "scripts": {
     "serve": "php -S localhost:3210 -t ./src",
-    "tests": "vendor/bin/phpunit --testdox tests",
-    "behat": "vendor/bin/behat",
-    "behatgen": "vendor/bin/behat --dry-run --append-snippets"
+    "tests": "php vendor/bin/phpunit --testdox ./tests",
+    "behat": "php vendor/bin/behat",
+    "behatgen": "php vendor/bin/behat --dry-run --append-snippets"
   },
   "autoload": {
         "classmap": [

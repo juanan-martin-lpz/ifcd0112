@@ -1,4 +1,7 @@
 <phpunit>
+  <php>
+    <ini name="display_errors" value="true"/>
+</php>
   <testsuites>
     <testsuite name="Trabajos">
       <file>tests/DatabaseProceduresTests.php</file>

@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/type-resolver/src', $vendorDir . '/phpdocumentor/reflection-docblock/src'),
+    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
     'phpDocumentor\\Guides\\' => array($vendorDir . '/phpdocumentor/phpdocumentor/src/Guides'),
     'phpDocumentor\\GraphViz\\PHPStan\\' => array($vendorDir . '/phpdocumentor/graphviz/src/phpDocumentor/PHPStan'),
     'phpDocumentor\\GraphViz\\' => array($vendorDir . '/phpdocumentor/graphviz/src/phpDocumentor/GraphViz'),

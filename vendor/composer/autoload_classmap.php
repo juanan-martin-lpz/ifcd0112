@@ -16,7 +16,7 @@ return array(
     'BlogNewEntryController' => $baseDir . '/src/blog/controladores/BlogNewEntryController.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'DAOBlogEntry' => $baseDir . '/src/blog/database/DAOBlogEntry.php',
-    'DBConfig' => $baseDir . '/src/DBConfig.php',
+    'DBConfig' => $baseDir . '/src/blog/database/DBConfig.php',
     'Database' => $baseDir . '/src/blog/database/Database.php',
     'IController' => $baseDir . '/src/blog/controladores/IController.php',
     'JsonException' => $vendorDir . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
