@@ -92,8 +92,6 @@ class Router
         // Si existe una ruta completa....
         $controller = @$this->routes[$internal_url];
 
-        echo $request['url'];
-        
         // Ruta parcial
         if (!$controller) {
 
