@@ -474,6 +474,12 @@ composer.lock
 *.scss.map
 
 #### Proyecto
+<<<<<<< HEAD
 /src/config/config.json
 /src/imagenes/
 /img/
+=======
+config.json
+/src/imagenes/
+/img/
+>>>>>>> 03bc360289d24f9d305bcdb9f554ea4751aef6ec
